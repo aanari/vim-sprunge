@@ -6,8 +6,6 @@
 " Notes:       Much of this code was thiefed from gundo.vim
 " ============================================================================
 
-let s:sprunge_cmd = 'curl -s -F "sprunge=<-" http://sprunge.us'
-
 function! sprunge#CopyToClipboard(clip) "{{{
   if g:sprunge_clipboard == 'vim' || g:sprunge_clipboard == 'all'
     call setreg('"', a:clip)
@@ -40,7 +38,7 @@ endfunction
 function! sprunge#Post(line1, line2)  "{{{
   let buffer = join(getline(a:line1, a:line2), "\n") . "\n"
   redraw | echon 'Posting to sprunge ... '
-  let l:url = system(s:sprunge_cmd, buffer)[0:-2]
+  let l:url = system(g:sprunge_cmd, buffer)[0:-2]
   call sprunge#CopyToClipboard(l:url)
   if g:sprunge_open_browser | call sprunge#OpenBrowser(l:url . '?' . &filetype) | endif
   redraw | echomsg 'Done: ' . l:url

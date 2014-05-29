@@ -29,6 +29,10 @@ else
   let g:sprunge_clipboard = 'all'
 endif
 
+if !exists('g:sprunge_cmd')
+  let g:sprunge_cmd = 'curl -s -F "sprunge=<-" http://sprunge.us'
+endif
+
 if !exists('g:sprunge_open_browser')
   let g:sprunge_open_browser = 0
 endif

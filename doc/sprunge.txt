@@ -69,8 +69,11 @@ g:sprunge_open_browser                             *SprungeConfig-open-browser*
     browser. >
         let g:sprunge_open_browser = 0
 <
-
-g:sprunge_map                                              *SprungeConfig-map*
+g:sprunge_cmd                                               *SprungeConfig-cmd*
+    Use this option to set a custom paste command/service instead of sprunge. >
+        let g:sprunge_cmd = nopaste
+<
+g:sprunge_map                                               *SprungeConfig-map*
     Use this option to configure the mapping you can use to sprunge. >
         let g:sprunge_map = '<Leader>s'
 <
